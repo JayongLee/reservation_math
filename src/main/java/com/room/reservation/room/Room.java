@@ -24,6 +24,9 @@ public class Room {
     private Integer id;
 
     @Column
+    private String room_name; // 방의 이름
+
+    @Column
     private String condition; // 예약 가능 여부를 알려줌
 
     @Column
