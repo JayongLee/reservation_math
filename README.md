@@ -1,7 +1,5 @@
 # Room_reservation
 
-[GitHub - JayongLee/reservation_math](https://github.com/JayongLee/reservation_math)
-
 [참고 사이트](https://www.notion.so/719ecbb659fd4553b71e4c6994145cee?pvs=21)
 
 [Room 📔](https://www.notion.so/Room-c4de56cd96a74eeaa58b17c7d8abcaed?pvs=21)
