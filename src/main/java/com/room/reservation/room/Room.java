@@ -25,9 +25,20 @@ public class Room {
 
     @Column
     private String room_name; // 방의 이름
+    private ReservationStatus reservationStatus;
 
-    @Column
-    private String condition; // 예약 가능 여부를 알려줌
+    public Room() {
+        this.reservationStatus = ReservationStatus.WAITING;
+    }
+
+    public void succeed() {
+        this.reservationStatus = ReservationStatus.RESERVED;
+    }
+
+    public void empty() {
+        this.reservationStatus = ReservationStatus.EMPTY;
+    }
+
 
     @Column
     private LocalDateTime start_time; // 이용 시작 시간

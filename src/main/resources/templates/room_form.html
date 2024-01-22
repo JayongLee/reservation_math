@@ -1,25 +1,16 @@
 <html layout:decorate="~{layout}" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <div layout:fragment="content" class="container my-3">
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th>번호</th>
-                <th>방 번호</th>
-                <th>상태</th>
-                <th>예약하기</th>
-                <th>종료 예정 시간</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="room, loop : ${roomList}">
-                <td th:text="${loop.count}"></td>
-
-                <td th:text="${room.room_name}"></td>
-                <td th:text="${room.getCondition()}"></td>
-                <input type="submit" value="예약" class="btn btn-primary my-2">
-                <td th:text="${#temporals.format(room.end_time, 'HH:mm')}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <h5 class="my-3 border-bottom pb-2">방 생성</h5>
+    <form th:action="@{/reserve/create}" method="post">
+        <div class="mb-3">
+            <label for="room_name" class="form-label">방 이름</label>
+            <input type="text" name="room_name" id="room_name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+        </div>
+        <input type="submit" value="저장하기" class="btn btn-primary my-2">
+    </form>
 </div>
 </html>
