@@ -1,8 +1,7 @@
-package com.room.reservation.reserve;
+package com.room.reservation.reservation;
 
 import javax.persistence.*;
 
-import com.room.reservation.room.Room;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,18 +10,23 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-public class Reserve {
+public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
-    private LocalDateTime start_time;
+    private Integer roomNumber;
 
-    @Column LocalDateTime end_time;
+    @Column
+    private LocalDateTime startTime;
+
+    @Column
+    private LocalDateTime endTime;
+
+    @Column
+    private boolean canceled;
 
     private LocalDateTime createDate;
 
-    // @OneToOne
-    // private Room room;
 }
